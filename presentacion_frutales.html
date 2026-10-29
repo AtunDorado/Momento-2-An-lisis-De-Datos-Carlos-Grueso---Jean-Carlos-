@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Más fruta, menos variedad</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{--bg:#f4f5f3;--ink:#1d221f;--ink2:#535b56;--muted:#8a918c;--grey:#bcc2bd;--line:#dde1dd;--accent:#2f7d4f;--soft:#dcebe0;--warn:#b0561c;
+--d:"Fraunces",Georgia,serif;--b:"IBM Plex Sans",system-ui,sans-serif;--m:"IBM Plex Mono",monospace}
+*{box-sizing:border-box}html{scroll-snap-type:y mandatory}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--b);font-size:clamp(15px,1.35vw,20px);line-height:1.45}
+.s{min-height:100vh;scroll-snap-align:start;padding:6vh 7vw 9vh;display:flex;flex-direction:column;justify-content:center;gap:2.4vh;position:relative;border-bottom:1px solid var(--line)}
+.tag{font-size:.72em;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-family:var(--d);font-size:clamp(34px,5.4vw,80px);line-height:1.04;margin:0;text-wrap:balance;max-width:16ch}
+h2{font-family:var(--d);font-size:clamp(24px,3.1vw,46px);line-height:1.1;margin:0;text-wrap:balance;max-width:24ch}
+.lead{font-size:1.15em;color:var(--ink2);max-width:58ch;margin:0}
+.hl{color:var(--accent)}.neg{color:var(--warn)}
+.foot{position:absolute;left:7vw;right:7vw;bottom:3vh;display:flex;justify-content:space-between;font-size:.62em;color:var(--muted)}
+.cols{display:grid;grid-template-columns:1.4fr 1fr;gap:4vw;align-items:center}
+@media(max-width:800px){.cols{grid-template-columns:1fr}}
+.big{font-family:var(--m);font-size:clamp(40px,6vw,92px);line-height:1;color:var(--accent)}
+.note{border-left:3px solid var(--accent);padding:.4em 0 .4em 1em;color:var(--ink2);max-width:52ch}
+ul.k{margin:0;padding-left:1.1em;display:grid;gap:.5em;max-width:60ch}
+svg{width:100%;height:auto;max-height:58vh;display:block}
+svg text{font-family:var(--b);fill:var(--ink2);font-size:13px}
+.arc{display:flex;gap:.5em;font-size:.68em;color:var(--muted)}.arc b{color:var(--accent)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:2vw}@media(max-width:800px){.grid3{grid-template-columns:1fr}}
+.box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.1em}
+.box h3{margin:0 0 .3em;font-size:1em}
+.box p{margin:0;color:var(--ink2);font-size:.9em}
+table{border-collapse:collapse;font-size:.85em}td,th{padding:.35em .8em;border-bottom:1px solid var(--line);text-align:left}
+th{color:var(--muted);font-weight:500}td.n{font-family:var(--m);text-align:right}
+#nav{position:fixed;right:1.4vw;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:5}
+#nav a{width:9px;height:9px;border-radius:50%;background:var(--grey)}#nav a.on{background:var(--accent)}
+#prog{position:fixed;top:0;left:0;height:3px;background:var(--accent);z-index:6;width:0}
+#idx{position:fixed;inset:0;background:rgba(244,245,243,.97);z-index:9;padding:6vh 8vw;overflow:auto;display:none}
+#idx.open{display:block}#idx a{display:block;color:var(--ink);text-decoration:none;padding:.4em 0;border-bottom:1px solid var(--line)}
+@media print{html{scroll-snap-type:none}.s{page-break-after:always;min-height:auto;height:100vh}#nav,#prog{display:none}}
+</style></head><body>
+<div id="prog"></div><nav id="nav"></nav><div id="idx"><h2>Índice</h2><div id="idxl"></div></div>
+
+<section class="s" data-t="Portada">
+  <div class="tag">Producción frutícola del Valle del Cauca · 2000–2022</div>
+  <h1>El Valle nunca produjo tanta fruta, ni dependió de tan pocos cultivos</h1>
+  <p class="lead">En dos décadas la producción creció <b class="hl">+82%</b>. Pero 7 de cada 10 toneladas salen de solo cuatro cultivos, y la mitad de los demás se está apagando.</p>
+  <p class="lead" style="font-size:.85em">Para la Secretaría de Agricultura del Valle del Cauca<br>Carlos Ignacio Grueso P. · Jean Carlos Cárdenas</p>
+  <div class="foot"><span>Fuente: datos.gov.co · MinAgricultura, Evaluaciones Agropecuarias Municipales</span><span class="pn"></span></div>
+</section>
+
+<section class="s" data-t="La propuesta">
+  <div class="tag">Lo que venimos a proponer</div>
+  <h2>El próximo peso de fomento frutícola debería ir a aguacate, mango, papaya y lulo en el Sur del Valle</h2>
+  <ul class="k">
+    <li>Son cultivos que <b>ya triplicaron</b> su producción, sin ayuda especial.</li>
+    <li>El Sur es la subregión que <b>crece más parejo</b> año tras año (r = 0,91) y todavía produce solo el 18%.</li>
+    <li>Así el crecimiento deja de depender del bloque plátano–piña–banano, que sube y baja al mismo tiempo.</li>
+  </ul>
+  <p class="note">En los próximos minutos le mostramos por qué, con los datos oficiales y en vivo.</p>
+  <div class="foot"><span>Cálculos sobre 9.953 registros oficiales, 42 municipios, 38 cultivos</span><span class="pn"></span></div>
+</section>
+
+<section class="s" data-t="Lo que necesitábamos saber">
+  <div class="tag">El punto de partida</div>
+  <div class="cols"><div>
+  <h2>Cada año se decide dónde apoyar la fruta. Para decidir bien hay que responder cinco preguntas</h2>
+  <p class="lead" style="font-size:.95em">Revisamos 23 años de reportes oficiales: cuánto produjo cada municipio, de cada cultivo, en cada año.</p></div>
+  <div><ol class="k">
+    <li>¿De verdad está creciendo la producción?</li>
+    <li>¿Qué cultivos y subregiones la sostienen?</li>
+    <li>¿Se comporta igual en todas las subregiones y ciclos?</li>
+    <li>¿Está concentrada en pocos municipios?</li>
+    <li>¿Qué cultivos están ganando y cuáles perdiendo?</li></ol></div></div>
+  <div class="foot"><span>Fuente: datos.gov.co · Evaluaciones Agropecuarias Municipales 2000–2022</span><span class="pn"></span></div>
+</section>
+
+<section class="s" data-t="¿Podemos confiar en las cifras?">
+  <div class="tag">Antes de creer en los números</div>
+  <h2>Las cifras son confiables: revisamos cada uno de los 9.992 registros antes de sacar una sola conclusión</h2>
+  <table>
+    <tr><th>Lo que encontramos</th><th>Qué hicimos</th><th>Por qué importa para la decisión</th></tr>
+    <tr><td>39 registros repetidos</td><td>Los quitamos</td><td>Habrían inflado la producción de algunos municipios</td></tr>
+    <tr><td>Ningún dato vacío</td><td>Regla fija: si aparece uno, se descarta, nunca se inventa</td><td>Un valor inventado cambiaría los totales</td></tr>
+    <tr><td>202 reportes de producción cero</td><td>Los dejamos</td><td>Son cosechas perdidas reales, no errores</td></tr>
+    <tr><td>Unas pocas fincas gigantes (hasta 105.000 t)</td><td>Comparamos con el valor típico (mediana), no con el promedio</td><td>El promedio (1.645 t) exagera 8 veces lo normal (200 t)</td></tr>
+  </table>
+  <p class="note"><b>Lo nuevo frente al primer análisis:</b> la revisión ya no se hace a mano. Cada vez que se abre el tablero, los datos se limpian solos con las mismas reglas, y cualquier persona puede repetir el resultado. Así, cuando lleguen las cifras de 2023, el análisis se actualiza sin rehacer nada.</p>
+  <div class="foot"><span>Reglas documentadas en preparacion.py, que el tablero ejecuta al abrir</span><span class="pn"></span></div>
+</section>
+
+<section class="s" data-t="Tendencia anual">
+  <div class="tag">1 · ¿Está creciendo?</div>
+  <h2>Sí: de 410 mil a 965 mil toneladas, aunque con ocho años de freno en el medio</h2>
+  <div id="ch1"></div>
+  <p class="note">Creció rápido hasta 2013, se frenó entre 2014 y 2021, y saltó en 2022. El crecimiento es real (r = 0,84 con el año), pero no está garantizado. Eso nos llevó a preguntar quién lo está sosteniendo.</p>
+  <div class="foot"><span>Fuente: datos.gov.co · toneladas totales por año · el eje empieza en cero</span><span class="pn"></span></div>
+</section>
+
+<section class="s" data-t="Concentración por cultivo">
+  <div class="tag">2 · ¿Quién lo sostiene?</div>
+  <div class="cols"><div>
+  <h2>Cuatro cultivos producen 7 de cada 10 toneladas del Valle</h2>
+  <div id="ch2"></div></div>
+  <div><div class="big">71%</div><p class="note">Solo el plátano es casi un tercio. Si a uno de estos cuatro le llega una plaga, una caída de precio o un mal invierno, lo siente todo el departamento. Entonces la pregunta fue: ¿hay otros cultivos que puedan tomar el relevo?</p></div></div>
+  <div class="foot"><span>Fuente: datos.gov.co · participación en toneladas 2000–2022</span><span class="pn"></span></div>
+</section>
+
+<section class="s" data-t="Ganadores y perdedores">
+  <div class="tag">5 · ¿Quién gana y quién pierde?</div>
+  <h2>Sí los hay: aguacate, mango y papaya triplicaron su producción mientras 12 cultivos se apagan</h2>
+  <div id="ch3"></div>
+  <p class="note">Comparando 2000–2004 con 2018–2022, 11 de 23 cultivos crecen. Brevo, curuba y melón casi desaparecieron. Los ganadores crecieron solos, sin un programa que los impulsara. Faltaba saber en qué territorio apostar por ellos.</p>
+  <div class="foot"><span>Fuente: datos.gov.co · cultivos con al menos 500 t en ambos periodos</span><span class="pn"></span></div>
+</section>
+
+<section class="s" data-t="Territorio">
+  <div class="tag">3 y 4 · ¿Dónde?</div>
+  <h2>Centro y Norte producen 3 de cada 4 toneladas, pero el Sur es el que crece de forma más constante</h2>
+  <table>
+    <tr><th>Subregión</th><th>Parte de la producción</th><th>Registro típico (mediana)</th><th>Qué tan constante crece (r con el año)</th></tr>
+    <tr><td>Centro</td><td class="n">45,4%</td><td class="n">219 t</td><td class="n">0,81</td></tr>
+    <tr><td>Norte</td><td class="n">31,0%</td><td class="n">260 t</td><td class="n">0,71</td></tr>
+    <tr><td><b class="hl">Sur</b></td><td class="n">18,1%</td><td class="n">144 t</td><td class="n"><b class="hl">0,91</b></td></tr>
+    <tr><td>Pacífico</td><td class="n">5,5%</td><td class="n">1.730 t</td><td class="n neg">−0,19</td></tr>
+  </table>
+  <p class="note">Además, 5 municipios (Sevilla, Caicedonia, Dagua, Buenaventura y La Unión) hacen el 38% de todo. El Sur crece año tras año y aún tiene espacio. Las cosechas semestrales rinden más por registro (≈555 t frente a 200 t de las anuales).</p>
+  <div class="foot"><span>Fuente: datos.gov.co · comparamos subregiones con la mediana porque unos pocos registros gigantes distorsionan el promedio</span><span class="pn"></span></div>
+</section>
+
+<section class="s" data-t="Mapa de correlación">
+  <div class="tag">El riesgo escondido</div>
+  <div class="cols"><div>
+  <h2>Plátano, piña y banano suben y bajan juntos: hoy el Valle tiene un solo motor, no tres</h2>
+  <div id="ch4"></div></div>
+  <div><p class="note"><b>Cómo leerlo:</b> verde fuerte significa que dos cultivos suben y bajan al mismo tiempo; naranja, que van en sentido contrario.</p>
+  <ul class="k" style="font-size:.9em"><li>Plátano, piña y banano se mueven en bloque (r ≈ 0,8). Si a uno le va mal, probablemente a los otros también.</li>
+  <li>Papaya y chontaduro van por su propio camino (0,85 entre ellos). Esa es una diversificación de verdad, aunque la papaya sube de forma irregular y hay que vigilarla.</li>
+  <li>Cítricos, el segundo cultivo más grande, está quieto (r = 0,01 con el año).</li></ul>
+  <p style="font-size:.75em;color:var(--muted)">Que dos cultivos se muevan juntos no prueba que uno cause al otro.</p></div></div>
+  <div class="foot"><span>Fuente: datos.gov.co · correlación de Pearson entre toneladas anuales 2000–2022 de los 6 cultivos más grandes</span><span class="pn"></span></div>
+</section>
+
+<section class="s" data-t="Véalo usted mismo">
+  <div class="tag">Demostración en vivo</div>
+  <h2>No tiene que creernos: el tablero responde estas preguntas frente a usted</h2>
+  <table>
+    <tr><th>Usted pregunta</th><th>Movemos en el tablero</th><th>Lo que aparece</th></tr>
+    <tr><td>¿Cuánto creció el Valle?</td><td>Nada, vista completa</td><td>+82% y la curva con el freno 2014–2021</td></tr>
+    <tr><td>¿De quién depende?</td><td>Top 10 por cultivo y luego por municipio</td><td>Plátano 30,8%; 5 municipios hacen el 38%</td></tr>
+    <tr><td>¿Por qué el Sur?</td><td>Subregión: solo Sur</td><td>Crecimiento constante, r ≈ 0,91</td></tr>
+    <tr><td>¿Rinden más los semestrales?</td><td>Ciclo: Semestre 1, ver mediana</td><td>≈555 t por registro frente a 200 t</td></tr>
+    <tr><td>¿Y los cuatro cultivos propuestos?</td><td>Aguacate, mango, papaya y lulo</td><td>Su crecimiento y si se mueven distinto al plátano</td></tr>
+  </table>
+  <div class="foot"><span>Tablero interactivo en Streamlit · capturas de respaldo disponibles</span><span class="pn"></span></div>
+</section>
+
+<section class="s" data-t="Lo que esto significa">
+  <div class="tag">Lo que esto significa</div>
+  <h2>Si seguimos igual, el Valle seguirá creciendo, pero sobre una base cada vez más frágil</h2>
+  <div class="grid3">
+    <div class="box"><h3>Un solo motor</h3><p>Los tres cultivos que más pesan suben y bajan juntos. Un mal año para uno se vuelve un mal año para el departamento.</p></div>
+    <div class="box"><h3>Pocos territorios</h3><p>5 municipios hacen el 38% y 10 municipios el 57%. El resto del Valle aporta poco.</p></div>
+    <div class="box"><h3>Una oportunidad ya en marcha</h3><p>Hay cultivos que se triplicaron sin apoyo y no dependen del plátano. Con apoyo, pueden ser el segundo motor.</p></div>
+  </div>
+  <div class="foot"><span>Interpretación de los hallazgos anteriores</span><span class="pn"></span></div>
+</section>
+
+<section class="s" data-t="La decisión">
+  <div class="tag">La decisión</div>
+  <h2>Que la Secretaría de Agricultura dirija el próximo fondo de fomento a 4 cultivos en ascenso en el Sur del Valle</h2>
+  <ul class="k">
+    <li><b>Qué apoyar:</b> aguacate (+224%), mango (+215%), papaya (+262%) y lulo (+194%).</li>
+    <li><b>Dónde:</b> en el Sur, que crece de forma constante (r = 0,91) y aún produce solo el 18%. Tiene espacio para crecer.</li>
+    <li><b>Cómo saber si funcionó:</b> que los cuatro cultivos grandes bajen del 71% del total y que los cinco municipios líderes bajen del 38%. El tablero lo mide cada año.</li>
+  </ul>
+  <div class="foot"><span>Seguimiento anual con el tablero interactivo</span><span class="pn"></span></div>
+</section>
+
+<section class="s" data-t="El siguiente paso">
+  <div class="tag">El siguiente paso</div>
+  <h2>Lo que sigue: pronosticar cuánta fruta producirá el Sur en 2023–2025 para fijar una meta medible</h2>
+  <div class="grid3">
+    <div class="box"><h3>La pregunta</h3><p>¿Cuántas toneladas darán aguacate, mango, papaya y lulo en el Sur si siguen su ritmo actual?</p></div>
+    <div class="box"><h3>Cómo</h3><p>Un modelo que aprende de los 23 años de historia (año, cultivo, subregión, ciclo y cosecha anterior). Lo probamos prediciendo 2020–2022, que ya conocemos.</p></div>
+    <div class="box"><h3>Para qué</h3><p>La Secretaría tendría una meta en toneladas y podría comparar lo real con lo esperado.</p></div>
+  </div>
+  <p class="note">También agruparemos municipios con perfiles parecidos al Sur para saber dónde más replicar el plan.</p>
+  <div class="foot"><span>Próxima fase del proyecto (Momento 3)</span><span class="pn"></span></div>
+</section>
+
+<section class="s" data-t="Lo que los datos no dicen">
+  <div class="tag">Para decidir con cuidado</div>
+  <h2>Lo que estos datos no alcanzan a decir</h2>
+  <ul class="k">
+    <li>Miden toneladas, no hectáreas. No sabemos si se creció sembrando más o produciendo mejor.</li>
+    <li>No hay precios: más toneladas no siempre significan más ingresos para el campesino.</li>
+    <li>Que dos cultivos se muevan juntos no prueba que uno cause al otro.</li>
+    <li>Con los años se reportaron más registros (de 399 a 536 por año). Parte del crecimiento puede ser mejor conteo.</li>
+    <li>La papaya creció mucho, pero de forma irregular. Conviene vigilarla antes de apostarle todo.</li>
+  </ul>
+  <div class="foot"><span>Fuente: datos.gov.co</span><span class="pn"></span></div>
+</section>
+
+<section class="s" data-t="Cierre">
+  <h1 style="max-width:20ch">Más fruta ya la tenemos. Ahora toca tener más de una fruta.</h1>
+  <p class="lead">Propuesta: fomento a aguacate, mango, papaya y lulo en el Sur del Valle, con meta medida cada año en el tablero.</p>
+  <p style="font-size:.75em;color:var(--muted);max-width:70ch">Carlos Ignacio Grueso P. · Jean Carlos Cárdenas<br>Uso de IA: nos apoyamos en un asistente de IA (Claude) para escribir el código y organizar la presentación. Las preguntas, la revisión de cada cifra, la interpretación y la propuesta son del equipo.<br>Respaldo de la demo: captura_1_general.png, captura_2_graficos.png y captura_3_correlacion.png.</p>
+  <div class="foot"><span>Fuente: datos.gov.co · MinAgricultura</span><span class="pn"></span></div>
+</section>
+
+<script>
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const A=css('--accent'),G=css('--grey'),W=css('--warn'),L=css('--line');
+const nf=n=>n.toLocaleString('es-CO');
+// ch1 line
+(()=>{const v=[410278,404115,454098,494229,487069,562663,680435,727417,645094,689725,756742,786601,841228,947429,893165,836047,885180,780950,795042,786308,759439,784362,965498];
+const w=1000,h=340,ml=60,mb=30,mt=20,iw=w-ml-20,ih=h-mt-mb,mx=1e6,x=i=>ml+i/22*iw,y=t=>mt+ih-t/mx*ih;let s=`<svg viewBox="0 0 ${w} ${h}">`;
+[0,250000,500000,750000,1e6].forEach(t=>s+=`<line x1="${ml}" x2="${w-20}" y1="${y(t)}" y2="${y(t)}" stroke="${L}"/><text x="${ml-8}" y="${y(t)+4}" text-anchor="end">${t?t/1000+' mil':'0'}</text>`);
+for(let i=0;i<=22;i+=2)s+=`<text x="${x(i)}" y="${h-6}" text-anchor="middle">${2000+i}</text>`;
+s+=`<polyline points="${v.map((t,i)=>x(i)+','+y(t)).join(' ')}" fill="none" stroke="${G}" stroke-width="2.5"/>`;
+[[0,'410 mil (2000)','start'],[13,'947 mil · pico 2013','middle'],[22,'965 mil (2022)','end']].forEach(([i,l,a])=>s+=`<circle cx="${x(i)}" cy="${y(v[i])}" r="5" fill="${A}"/><text x="${x(i)}" y="${y(v[i])-12}" text-anchor="${a}" style="fill:${A};font-weight:600">${l}</text>`);
+document.getElementById('ch1').innerHTML=s+'</svg>'})();
+// bars
+function bars(id,items,fmt,col){const w=900,rh=34,ml=170,mr=90,h=items.length*rh+6,mn=Math.min(0,...items.map(i=>i[1])),mx=Math.max(...items.map(i=>i[1])),x=t=>ml+(t-mn)/(mx-mn)*(w-ml-mr);let s=`<svg viewBox="0 0 ${w} ${h}">`;
+items.forEach(([l,t],k)=>{const yy=k*rh,x0=x(0),x1=x(t);s+=`<text x="${ml-10}" y="${yy+22}" text-anchor="end">${l}</text><rect x="${Math.min(x0,x1)}" y="${yy+8}" width="${Math.abs(x1-x0)}" height="${rh-14}" rx="3" fill="${col(t,k)}"/><text x="${t>=0?x1+8:x0+8}" y="${yy+22}" style="font-family:var(--m)">${fmt(t)}</text>`});
+if(mn<0)s+=`<line x1="${x(0)}" x2="${x(0)}" y1="0" y2="${h}" stroke="${css('--muted')}"/>`;document.getElementById(id).innerHTML=s+'</svg>'}
+bars('ch2',[['Plátano',30.8],['Cítricos',15.7],['Piña',13.7],['Banano',10.5],['Resto (34 cultivos)',29.3]],t=>t.toString().replace('.',',')+'%',(t,k)=>k<4?A:G);
+bars('ch3',[['Papaya',262],['Aguacate',224],['Mango',215],['Lulo',194],['Piña',164],['Plátano',123],['Maracuyá',-36],['Granadilla',-67],['Tomate de árbol',-72],['Chontaduro',-80],['Melón',-82],['Curuba',-85],['Brevo',-97]],t=>(t>0?'+':'')+t+'%',t=>t>=0?A:W);
+// heatmap
+(()=>{const lab=['Plátano','Cítricos','Piña','Banano','Papaya','Chontaduro','Año'];const M=[[1,.16,.82,.80,.05,-.10,.85],[.16,1,.06,.46,.39,.32,.01],[.82,.06,1,.54,-.11,-.39,.96],[.80,.46,.54,1,.42,.31,.60],[.05,.39,-.11,.42,1,.85,.01],[-.10,.32,-.39,.31,.85,1,-.26],[.85,.01,.96,.60,.01,-.26,1]];
+const cs=62,ml=110,mt=90,w=ml+7*cs+10,h=mt+7*cs+10;let s=`<svg viewBox="0 0 ${w} ${h}">`;
+lab.forEach((l,i)=>{s+=`<text x="${ml-8}" y="${mt+i*cs+cs/2+5}" text-anchor="end">${l}</text><text transform="translate(${ml+i*cs+cs/2-4},${mt-8}) rotate(-40)">${l}</text>`});
+M.forEach((r,i)=>r.forEach((v,j)=>{s+=`<rect x="${ml+j*cs+1}" y="${mt+i*cs+1}" width="${cs-2}" height="${cs-2}" rx="4" fill="${v>=0?A:W}" fill-opacity="${Math.abs(v)*.9+.05}"/><text x="${ml+j*cs+cs/2}" y="${mt+i*cs+cs/2+5}" text-anchor="middle" style="font-family:var(--m);fill:${Math.abs(v)>.55?'#fff':css('--ink')}">${v.toFixed(2).replace('.',',')}</text>`}));
+document.getElementById('ch4').innerHTML=s+'</svg>'})();
+// nav
+const S=[...document.querySelectorAll('.s')];S.forEach((x,i)=>{const n=x.querySelector('.pn');if(n)n.textContent=i+1});S.forEach((s,i)=>{s.id='s'+(i+1);const a=document.createElement('a');a.href='#s'+(i+1);a.title=s.dataset.t;nav.append(a);const b=document.createElement('a');b.href='#s'+(i+1);b.textContent=(i+1)+'. '+s.dataset.t;b.onclick=()=>idx.classList.remove('open');idxl.append(b)});
+let cur=0;const go=i=>{cur=Math.max(0,Math.min(S.length-1,i));S[cur].scrollIntoView({behavior:'smooth'})};
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){cur=S.indexOf(e.target);[...nav.children].forEach((a,k)=>a.classList.toggle('on',k===cur));prog.style.width=((cur+1)/S.length*100)+'%'}}),{threshold:.5}).observe&&S.forEach(s=>new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){cur=S.indexOf(e.target);[...nav.children].forEach((a,k)=>a.classList.toggle('on',k===cur));prog.style.width=((cur+1)/S.length*100)+'%'}}),{threshold:.5}).observe(s));
+addEventListener('keydown',e=>{if(['ArrowDown','ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(cur+1)}else if(['ArrowUp','ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(cur-1)}else if(e.key==='Escape')idx.classList.toggle('open')});
+</script>
+</body></html>
